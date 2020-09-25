@@ -1,0 +1,34 @@
+// 1. Incluir a bilioteca do DHT11
+#include "DHT.h"
+
+// 2. Indicar o pino do DHT11, no caso do devKit da Robocore está ligado internamente ao pino 12
+const int pinoDHT = 12;
+
+
+//3. Criar  a instância DHT com o nome da variável,  o pino e o tipo de dht
+DHT dht(pinoDHT, DHT11);
+
+void setup() {
+  // 4. Abrimos a comunicação serial para imprimir os valores no monitor serial
+  Serial.begin(115200);
+  
+  //5. Iniciar o sensor DHT11
+  dht.begin();
+
+}
+
+void loop() {
+
+   	//Criar variáveis para armazenar a temperatura e a umidade lidas
+    float temperatura = dht.readTemperature();
+    float umidade = dht.readHumidity();
+	
+    //Mostramos no Monitor Serial os valores de temperatura e umidade
+    Serial.print("Temperatura: ");
+    Serial.print(temperatura);
+    Serial.print(" *C - Umidade: ");
+    Serial.print(umidade);
+    Serial.print(" % - Luminosidade: ");
+	
+}
+ 

@@ -9,6 +9,7 @@ const int pinoDHT = 12;
 DHT dht(pinoDHT, DHT11);
 
 void setup() {
+  
   // 4. Abrimos a comunicação serial para imprimir os valores no monitor serial
   Serial.begin(115200);
   
@@ -19,16 +20,15 @@ void setup() {
 
 void loop() {
 
-   	//Criar variáveis para armazenar a temperatura e a umidade lidas
-    float temperatura = dht.readTemperature();
-    float umidade = dht.readHumidity();
+   // 6. Criar variáveis para armazenar a temperatura e a umidade lidas
+   float temperatura = dht.readTemperature();
+   float umidade = dht.readHumidity();
 	
-    //Mostramos no Monitor Serial os valores de temperatura e umidade
-    Serial.print("Temperatura: ");
-    Serial.print(temperatura);
-    Serial.print(" *C - Umidade: ");
-    Serial.print(umidade);
-    Serial.print(" % - Luminosidade: ");
+   // 7. Mostramos no Monitor Serial os valores de temperatura e umidade
+   Serial.print("Temperatura: ");
+   Serial.print(temperatura);
+   Serial.print(" *C - Umidade: ");
+   Serial.print(umidade);
+   Serial.print(" % - Luminosidade: ");
 	
 }
- 

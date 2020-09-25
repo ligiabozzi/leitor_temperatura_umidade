@@ -1,3 +1,5 @@
+/******************************* LEITOR DE TEMPERATURA E UMIDADE COM O DEVKIT da ROBOCORE *******************************/
+
 // 1. Incluir a bilioteca do DHT11
 #include "DHT.h"
 
